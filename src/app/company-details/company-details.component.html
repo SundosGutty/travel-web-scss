@@ -1,0 +1,103 @@
+<main>
+    <section class="section-about" id="section-tours">
+        <div class="u-center-text u-margin-bottom-big">
+            <h2 class="heading-secondary">Exciting tours for adventurous people</h2>
+        </div>
+        <div class="row">
+            <div class="col-1-of-2">
+                <h3 class="heading-tertiary u-margin-bottom-small">You're going to fall in love with nature</h3>
+                <p class="paragraph">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati nisi voluptas ratione cum quisquam, qui optio earum reprehenderit architecto necessitatibus quas vel. 
+                </p>
+                <h3 class="heading-tertiary u-margin-bottom-small">Live adventures like you never have before</h3>
+                <p class="paragraph">
+               Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci doloremque eius unde? Animi vel doloribus at? Sapiente, provident.
+                </p>
+                <a href="#" class="btn-text">Learn more &rarr;</a>
+            </div>
+            <div class="col-1-of-2">
+                <div class="composition">
+                    <img src="../../../assets/img/nat-1-large.jpg" alt="photo 1" class="composition__photo composition__photo--p1">
+                    <img src="../../../assets/img/nat-2-large.jpg" alt="photo 2" class="composition__photo composition__photo--p2">
+                    <img src="../../../assets/img/nat-3-large.jpg" alt="photo 3" class="composition__photo composition__photo--p3">
+                 </div>
+            </div>
+        </div>
+    </section>
+    <section class="section-features" id="section-tours">
+        <div class="row">
+            <div class="col-1-of-4" *ngFor="let item of featuresList">
+                <div class="feature-box">
+                 <i class="feature-box__icon" [ngClass]="item.icon"></i>
+                 <h3 class="heading-tertiary  u-margin-bottom-small">{{item.title}}</h3>
+                 <p class="feature-box__text">{{item.subtitle}} </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section-tours" id="section-tours">
+        <div class="u-center-text u-margin-bottom-big">
+            <h2 class="heading-secondary">Most popular tours</h2>
+        </div>
+         <div class="row">
+             <div class="col-1-of-3" *ngFor="let item of tours">
+                 <div class="card">
+                     <div class="card__side card__side--front" >
+                         <div class="card__picture icon-basic-world" [ngClass]="item.frontPicClass">
+                             &nbsp;
+                         </div>
+                         <h4 class="card__heading">
+                             <span class="card__heading-span" [ngClass]="item.subTitleClass">{{item.title}}</span>
+                         </h4>
+                         <div class="card__details">
+                            <ul>
+                                <li *ngFor="let title of item.details">{{title}}</li>
+                            </ul>
+                         </div>
+                     </div>
+                     <div class="card__side card__side--back" [ngClass]="item.backPiClass">
+                        <div class="card__cta">
+                            <div class="card__price-box">
+                                <p class="card__price-only">Only</p>
+                                <p class="card__price-value">${{item.price}}</p>
+                            </div>
+                           <a href="#popup" class="btn btn--white">Book now!</a>
+                        </div>
+                    </div>
+                 </div>
+             </div>
+         </div>
+         <div class="u-center-text u-margin-top-huge">
+             <a href="" class="btn btn--green">Discover all tours</a>
+         </div>
+    </section>
+    <section class="section-stories">
+        <div class="bg-video">
+            <video class="bg-video__content" autoplay muted loop>
+                <source src="../../assets/img/video.mp4" type="video/mpa">
+                <source src="../../assets/img/video.webm" type="video/webm">
+            </video>
+        </div>
+     <div class="u-center-text u-margin-bottom-big">
+         <h2 class="heading-secondary">We make people genuinely happy</h2>
+     </div>
+     <div class="row">
+         <div class="story" *ngFor="let item of clientsStories">
+             <figure class="story__shape">
+                 <img class="story__img" [src]="item.img" alt="person-on-a-tour">
+                 <figcaption class="story__caption">
+                    {{item.clientName}}
+                 </figcaption>
+             </figure>
+             <div class="story__text">
+                 <h3 class="heading-tertiary u-margin-bottom-small">{{item.title}}</h3>
+                 <p>{{item.paragraph}}</p>
+             </div>
+         </div>
+     </div>
+     <div class="u-center-text u-margin-top-huge">
+         <a href="" class="btn-text">Read all stories &rarr;</a>
+     </div>
+    </section>
+</main>
+<popup-modal id="#popup"></popup-modal>
